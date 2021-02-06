@@ -16,11 +16,13 @@
 ##### Concurrency
 
 a ----> b -----> c ----> d    [one coffee machine]
+
 e ----> f -----> g ----> h
 
 ##### Parallelism
 
 a ----> b -----> c ----> d    [one coffee machine]
+
 e ----> f -----> g ----> h    [one coffee machine]
 
 ##### 4. Preemptive vs Cooperative multitasking
