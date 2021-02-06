@@ -16,9 +16,12 @@ public class BasicFunctionsOfLL {
         c.setNext(d);
         d.setNext(null);
 
-        System.out.println(length(a));
-        printList(insertBeginning(a, -1));
-        printList(insertEnd(a, -1));
+//        System.out.println(length(a));
+//        printList(insertBeginning(a, -1));
+//        printList(insertEnd(a, -1));
+//        printList(insertMiddle(a, -1, 2));
+//        printList(deleteStart(a));
+        printList(deleteEnd(a));
     }
 
     // length of linked list
@@ -68,12 +71,61 @@ public class BasicFunctionsOfLL {
 
     // insert node at the middle
     public static ListNode insertMiddle(ListNode head, int data, int k) {
-        return null;
+        // if k is less than 0
+        if (k<0) {
+            k =0;
+        }
+        // if head is set to null
+        if (head == null) {
+            ListNode a = new ListNode();
+            a.setData(data);
+            a.setNext(null);
+            return a;
+        }
+
+        //
+        int index = 1;
+        ListNode prevNode = head;
+        while (prevNode.getNext() != null && index < k) {
+            prevNode = prevNode.getNext();
+            index++;
+        }
+
+        ListNode a = new ListNode();
+        a.setData(data);
+        a.setNext(prevNode.getNext());
+        prevNode.setNext(a);
+
+        return head;
     }
 
     // delete node at the start
+    public static ListNode deleteStart(ListNode head) {
+        // handle base case
+        if (head == null) return null;
+        // other scenarios
+        ListNode nextNode = head.getNext();
+        head.setNext(null);
+        return nextNode;
+    }
 
     // delete node at the end
+    public static ListNode deleteEnd(ListNode head) {
+
+        if (head == null) return null;
+        if (head.getNext() == null) {
+            head.setNext(null);
+            return head;
+        }
+        ListNode nextNode = head.getNext();
+        ListNode prevNode = head;
+        while (nextNode.getNext() != null) {
+            prevNode = nextNode;
+            nextNode = nextNode.getNext();
+        }
+        prevNode.setNext(null);
+        return head;
+    }
 
     // delete node at the middle
 
