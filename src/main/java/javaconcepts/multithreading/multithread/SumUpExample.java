@@ -1,12 +1,6 @@
-package javaconcepts.multithreading;
+package javaconcepts.multithreading.multithread;
 
-public class MultiThread {
-    public static void main(String[] args) throws InterruptedException {
-        SumUpExample.runTest();
-    }
-}
-
-class SumUpExample {
+public class SumUpExample {
     private final int start;
     private final int end;
     private long counter = 0;
@@ -54,5 +48,9 @@ class SumUpExample {
     public static void runTest() throws InterruptedException {
         oneThread();
         twoThread();
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        SumUpExample.runTest();
     }
 }
