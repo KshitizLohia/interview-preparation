@@ -71,4 +71,19 @@ A live-lock occurs when two threads continuously react in response to the action
 
 Person X and Person Y wants to cross 
 Person X moves right and person Y moves left and both again in deadlock
-###### Starvation
+
+##### 9. Mutex vs Semaphore
+###### Mutex: Mutual Exclusion. Guard data-structure.
+Mutex allows only a single thread to access a Critical section
+
+###### Semaphore: Limiting access to collection of resources
+Semaphore : Give out permits. Any new thread will be blocked till an earlier thread with a permit returns to semaphore
+
+
+A semaphore can potentially act as a mutex if the permits it can give out is set to 1
+
+that in case of a mutex the same thread must call acquire and subsequent release on the mutex whereas in case of a binary sempahore, different threads can call acquire and release on the semaphore.
+
+1. Mutex implies mutual exclusion and is used to serialize access to critical sections whereas semaphore can potentially be used as a mutex but it can also be used for cooperation and signaling amongst threads. Semaphore also solves the issue of missed signals.
+2. Mutex if locked, must necessarily be unlocked by the same thread. A semaphore can be acted upon by different threads. This is true even if the semaphore has a permit of one
+3. Think of semaphore analogous to a car rental service such as Hertz. Each outlet has a certain number of cars, it can rent out to customers. It can rent several cars to several customers at the same time but if all the cars are rented out then any new customers need to be put on a waitlist till one of the rented cars is returned. In contrast, think of a mutex like a lone runway on a remote airport. Only a single jet can land or take-off from the runway at a given point in time. No other jet can use the runway simultaneously with the first aircraft.
