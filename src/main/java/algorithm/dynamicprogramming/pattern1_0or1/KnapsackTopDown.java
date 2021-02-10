@@ -1,4 +1,4 @@
-package algorithm.dynamicprogramming.pattern1;
+package algorithm.dynamicprogramming.pattern1_0or1;
 
 
 /**
@@ -11,8 +11,19 @@ package algorithm.dynamicprogramming.pattern1;
  * Knapsack capacity
  * <p>
  * Ans: Banana + Melon
+ *
+ *
+ * Top down:
+ * dp[i, c] = max(profit[i] +  dp[i+1, c-[w[i]]], dp[i+1, c])
+ *
+ * Bottom up:
+ * dp[i, c] = max(profit[i] + dp[i-1, c-w[i]], dp[i-1, c])
+ *
+ *
+ * Space: O(n*c + n) =O(n) = O(n*c) [matrix of n*c] + O(n) [n recursion steps]
+ * Time: O(n*c)
  */
-public class Knapsack {
+public class KnapsackTopDown {
 
     /**
      * for each item i:
