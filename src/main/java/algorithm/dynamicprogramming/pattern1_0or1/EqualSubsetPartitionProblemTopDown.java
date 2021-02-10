@@ -7,7 +7,7 @@ package algorithm.dynamicprogramming.pattern1_0or1;
  *
  * a(n),b(n) = a(n-1)==b(n) | a(n)==b(n-1)
  */
-public class SubsetProblem {
+public class EqualSubsetPartitionProblemTopDown {
 
     /**
      * Complexity: O(pow(2,n)) Space: O(n)
@@ -63,7 +63,6 @@ public class SubsetProblem {
     public static boolean canPartitionSubsetMemoization(int[] a) {
         // find sum
         int sum = 0;
-
         for (int i=0;i<a.length;i++) {
             sum += a[i];
         }
