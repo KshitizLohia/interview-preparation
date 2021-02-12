@@ -3,7 +3,7 @@ package datastructures.array.slidingwindow;
 /**
  * Given an array, find the average of all contiguous subarrays of size ‘K’ in it.
  */
-public class SlidingWindow {
+public class SlidingWindowAverage {
 
     public static double[] computeSlidingAverageBruteforce(final int[] a, final int size) {
         double[] listOfAverage = new double[a.length - size + 1];
