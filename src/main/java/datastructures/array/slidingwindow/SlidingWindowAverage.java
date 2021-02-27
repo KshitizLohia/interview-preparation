@@ -1,5 +1,8 @@
 package datastructures.array.slidingwindow;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Given an array, find the average of all contiguous subarrays of size ‘K’ in it.
  */
